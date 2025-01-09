@@ -1,0 +1,14 @@
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\bin\Debug\net9.0\human-readable-duration-format.exe
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\bin\Debug\net9.0\human-readable-duration-format.deps.json
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\bin\Debug\net9.0\human-readable-duration-format.runtimeconfig.json
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\bin\Debug\net9.0\human-readable-duration-format.dll
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\bin\Debug\net9.0\human-readable-duration-format.pdb
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.AssemblyInfoInputs.cache
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.AssemblyInfo.cs
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.csproj.CoreCompileInputs.cache
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.dll
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\refint\human-readable-duration-format.dll
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.pdb
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.genruntimeconfig.cache
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\ref\human-readable-duration-format.dll
