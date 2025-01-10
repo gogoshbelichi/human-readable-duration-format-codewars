@@ -164,6 +164,17 @@ string secondsCount(long _restSeconds)
     return $"{_secondsCount} seconds";
 }
 
+Console.WriteLine(formatDuration(0));
+Console.WriteLine(formatDuration(1));
+Console.WriteLine(formatDuration(59));
+Console.WriteLine(formatDuration(60));
+Console.WriteLine(formatDuration(61));
+Console.WriteLine(formatDuration(3599));
+Console.WriteLine(formatDuration(3600));
+Console.WriteLine(formatDuration(3601));
+Console.WriteLine(formatDuration(3659));
+Console.WriteLine(formatDuration(3660));
+Console.WriteLine(formatDuration(3661));
 Console.WriteLine(formatDuration(86399));
 Console.WriteLine(formatDuration(86400));
 Console.WriteLine(formatDuration(86401));
