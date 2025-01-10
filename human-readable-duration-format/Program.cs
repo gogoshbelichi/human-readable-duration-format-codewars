@@ -1,4 +1,4 @@
-﻿// sec in a year
+// sec in a year
 const long year = 31536000;
 // sec in a day
 const long day = 86400;
@@ -9,10 +9,12 @@ const long minute = 60;
 
 string formatDuration(int seconds)
 {
+    // 0 seconds case
     if (seconds == 0)
     {
         return "now";
     }
+    // case up to a minute
     if (seconds > 0 && seconds < minute)
     {
         if (seconds == 1)
@@ -21,6 +23,7 @@ string formatDuration(int seconds)
         }
         return $"{seconds} seconds";
     }
+    // to store parts of our future result string
     var resultParts = new List<string>();
 
     if (seconds >= year)
@@ -161,17 +164,6 @@ string secondsCount(long _restSeconds)
     return $"{_secondsCount} seconds";
 }
 
-Console.WriteLine(formatDuration(0));
-Console.WriteLine(formatDuration(1));
-Console.WriteLine(formatDuration(59));
-Console.WriteLine(formatDuration(60));
-Console.WriteLine(formatDuration(61));
-Console.WriteLine(formatDuration(3599));
-Console.WriteLine(formatDuration(3600));
-Console.WriteLine(formatDuration(3601));
-Console.WriteLine(formatDuration(3659));
-Console.WriteLine(formatDuration(3660));
-Console.WriteLine(formatDuration(3661));
 Console.WriteLine(formatDuration(86399));
 Console.WriteLine(formatDuration(86400));
 Console.WriteLine(formatDuration(86401));

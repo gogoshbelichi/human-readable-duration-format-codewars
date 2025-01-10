@@ -12,3 +12,4 @@ C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-dura
 C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.pdb
 C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.genruntimeconfig.cache
 C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\ref\human-readable-duration-format.dll
+C:\Users\Gogosh\RiderProjects\human-readable-duration-format\human-readable-duration-format\obj\Debug\net9.0\human-readable-duration-format.sourcelink.json
