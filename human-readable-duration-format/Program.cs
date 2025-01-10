@@ -1,4 +1,4 @@
-﻿// sec in a year
+// sec in a year
 const long year = 31536000;
 // sec in a day
 const long day = 86400;
@@ -23,58 +23,76 @@ string formatDuration(int seconds)
         }
         return $"{seconds} seconds";
     }
-    // place to store intermediate result which consist of parts
+    // to store parts of our future result string
     var resultParts = new List<string>();
-    
-    // input string is bigger than year
+
     if (seconds >= year)
     {
-        resultParts.Add(yearsCount(seconds));
-        long _restDays = restDays(seconds);
-        resultParts.Add(daysCount(_restDays));
-        long _restHours = restHours(_restDays);
-        resultParts.Add(hoursCount(_restHours));
-        long _restMinutes = restMinutes(_restHours);
-        resultParts.Add(minutesCount(_restMinutes));
-        long _restSeconds = restSeconds(_restMinutes);
-        resultParts.Add(secondsCount(_restSeconds));
-    }
-    // input string is bigger than day but smaller than year
-    if (seconds < year && seconds >= day)
-    {
-        resultParts.Add(daysCount(seconds));
-        long _restHours = restHours(seconds);
-        resultParts.Add(hoursCount(_restHours));
-        long _restMinutes = restMinutes(_restHours);
-        resultParts.Add(minutesCount(_restMinutes));
-        long _restSeconds = restSeconds(_restMinutes);
-        resultParts.Add(secondsCount(_restSeconds));
-    }
-    // 59 min 59 sec < input string is < 24 hours
-    if (seconds >= hour && seconds < day)
-    {
-        resultParts.Add(hoursCount(seconds));
-        long _restMinutes = restMinutes(seconds);
-        resultParts.Add(minutesCount(_restMinutes));
-        long _restSeconds = restSeconds(_restMinutes);
-        resultParts.Add(secondsCount(_restSeconds));
-    }
+        long years = seconds / year;
+        if (years > 0) resultParts.Add(yearsCount(seconds));
 
-    if (seconds >= minute && seconds < hour)
+        long _restDays = restDays(seconds);
+        long days = _restDays / day;
+        if (days > 0) resultParts.Add(daysCount(_restDays));
+
+        long _restHours = restHours(_restDays);
+        long hours = _restHours / hour;
+        if (hours > 0) resultParts.Add(hoursCount(_restHours));
+
+        long _restMinutes = restMinutes(_restHours);
+        long minutes = _restMinutes / minute;
+        if (minutes > 0) resultParts.Add(minutesCount(_restMinutes));
+
+        long _restSeconds = restSeconds(_restMinutes);
+        if (_restSeconds > 0) resultParts.Add(secondsCount(_restSeconds));
+    }
+    else if (seconds >= day)
     {
-        resultParts.Add(minutesCount(seconds));
+        long days = seconds / day;
+        if (days > 0) resultParts.Add(daysCount(seconds));
+
+        long _restHours = restHours(seconds);
+        long hours = _restHours / hour;
+        if (hours > 0) resultParts.Add(hoursCount(_restHours));
+
+        long _restMinutes = restMinutes(_restHours);
+        long minutes = _restMinutes / minute;
+        if (minutes > 0) resultParts.Add(minutesCount(_restMinutes));
+
+        long _restSeconds = restSeconds(_restMinutes);
+        if (_restSeconds > 0) resultParts.Add(secondsCount(_restSeconds));
+    }
+    else if (seconds >= hour)
+    {
+        long hours = seconds / hour;
+        if (hours > 0) resultParts.Add(hoursCount(seconds));
+
+        long _restMinutes = restMinutes(seconds);
+        long minutes = _restMinutes / minute;
+        if (minutes > 0) resultParts.Add(minutesCount(_restMinutes));
+
+        long _restSeconds = restSeconds(_restMinutes);
+        if (_restSeconds > 0) resultParts.Add(secondsCount(_restSeconds));
+    }
+    else if (seconds >= minute)
+    {
+        long minutes = seconds / minute;
+        if (minutes > 0) resultParts.Add(minutesCount(seconds));
+
         long _restSeconds = restSeconds(seconds);
-        resultParts.Add(secondsCount(_restSeconds));
+        if (_restSeconds > 0) resultParts.Add(secondsCount(_restSeconds));
     }
 
     if (resultParts.Count == 1)
     {
         return resultParts[0];
     }
+
     string result = string.Join(", ", resultParts.GetRange(0, resultParts.Count - 1));
-    string last = resultParts[^1]; // Последний элемент
+    string last = resultParts[^1];
     return $"{result} and {last}";
 }
+
 //counting years
 string yearsCount(long seconds)
 {
@@ -146,32 +164,9 @@ string secondsCount(long _restSeconds)
     return $"{_secondsCount} seconds";
 }
 
-
-/*for (int i = 0; i < int.MaxValue; i+=110000)
-{
-    Console.WriteLine(formatDuration(i)+"\n");
-    Thread.Sleep(10);
-    Console.Clear();
-}*/
-
-Console.WriteLine(formatDuration(0));
-Console.WriteLine(formatDuration(1));
-Console.WriteLine(formatDuration(59));
-Console.WriteLine(formatDuration(60));
-Console.WriteLine(formatDuration(61));
-Console.WriteLine(formatDuration(3599));
-Console.WriteLine(formatDuration(3600));
-Console.WriteLine(formatDuration(3601));
-Console.WriteLine(formatDuration(3659));
-Console.WriteLine(formatDuration(3660));
-Console.WriteLine(formatDuration(3661));
-
-
-
 Console.WriteLine(formatDuration(86399));
 Console.WriteLine(formatDuration(86400));
 Console.WriteLine(formatDuration(86401));
 Console.WriteLine(formatDuration(31535999));
 Console.WriteLine(formatDuration(31536000));
 Console.WriteLine(formatDuration(31536001));
-
