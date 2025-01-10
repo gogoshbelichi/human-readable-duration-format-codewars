@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("human-readable-duration-format")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48a47f31f0071a8344e2e9cd8055d3ec51aeb67a")]
 [assembly: System.Reflection.AssemblyProductAttribute("human-readable-duration-format")]
 [assembly: System.Reflection.AssemblyTitleAttribute("human-readable-duration-format")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
