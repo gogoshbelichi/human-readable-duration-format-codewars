@@ -1,4 +1,11 @@
-﻿string formatDuration(int seconds)
+﻿// sec in a year
+const int year = 31536000;
+// sec in a day
+const int day = 86400;
+const int hour = 3600;
+const int minute = 60;
+
+string formatDuration(int seconds)
 {
     // place to store intermediate result which consist of parts
     var resultParts = new List<string>();
@@ -8,18 +15,14 @@
     {
         return "now";
     }
-    // sec in a year
-    const int year = 31536000;
-    // sec in a day
-    const int day = 86400;
     // input string is bigger than year
     if (seconds >= year)
     {
         resultParts.Add(yearsCount(seconds));
         int _restDays = restDays(seconds);
         resultParts.Add(daysCount(_restDays));
-        int _restHoursMinutesSeconds = restHoursMinutesSeconds(_restDays);
-        TimeSpan timeSpan = TimeSpan.FromSeconds(_restHoursMinutesSeconds);
+        int _restHours = restHours(_restDays);
+        TimeSpan timeSpan = TimeSpan.FromSeconds(_restHours);
         resultParts.Add(hoursCount(timeSpan));
         resultParts.Add(minutesCount(timeSpan));
         resultParts.Add(secondsCount(timeSpan));
@@ -55,7 +58,7 @@
 //counting years
 string yearsCount(int number)
 {
-    int _yearsCount = number / 31536000;
+    int _yearsCount = number / year;
     if (_yearsCount == 1)
     {
         return $"{_yearsCount} year";
@@ -65,12 +68,12 @@ string yearsCount(int number)
 //counting rest of seconds from yearsCount
 int restDays(int number)
 {
-    return number - (number / 31536000);
+    return number - (number / year);
 }
 //counting days using number we got in the upper function
 string daysCount(int number)
 {
-    int _daysCount = number / 86400;
+    int _daysCount = number / day;
     if (_daysCount == 1)
     {
         return $"{_daysCount} day";
@@ -78,7 +81,7 @@ string daysCount(int number)
     return $"{_daysCount} days";
 }
 //counting rest of seconds from yearsCount
-int restHoursMinutesSeconds(int number)
+int restHours(int number)
 {
     return number - (number / 86400);
 }
@@ -92,6 +95,11 @@ string hoursCount(TimeSpan timeSpan)
     return $"{timeSpan.Hours} hours";
 }
 
+int restMinutes(int number)
+{
+    return number - (number / 86400);
+}
+
 string minutesCount(TimeSpan timeSpan)
 {
     if (timeSpan.Minutes == 1)
@@ -99,6 +107,11 @@ string minutesCount(TimeSpan timeSpan)
         return $"{timeSpan.Minutes} minute";
     }
     return $"{timeSpan.Minutes} minutes";
+}
+
+int restSeconds(int number)
+{
+    return number - (number / 86400);
 }
 
 string secondsCount(TimeSpan timeSpan)
@@ -118,11 +131,5 @@ string secondsCount(TimeSpan timeSpan)
     Console.Clear();
 }*/
 
-Console.WriteLine(formatDuration(15731080));
-Console.WriteLine(formatDuration(15731081));
-Console.WriteLine(formatDuration(15731079));
-Console.WriteLine(formatDuration(86400));
-Console.WriteLine(formatDuration(86399));
-Console.WriteLine(formatDuration(86600));
-Console.WriteLine(formatDuration(33243586));
-Console.WriteLine(formatDuration(int.MaxValue));
+Console.WriteLine(formatDuration(31535998));
+Console.WriteLine(1234 % 3);
